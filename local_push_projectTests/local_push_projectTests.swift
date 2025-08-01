@@ -1,10 +1,3 @@
-//
-//  local_push_projectTests.swift
-//  local_push_projectTests
-//
-//  Created by 小川悟 on 2025/08/01.
-//
-
 import Testing
 @testable import local_push_project
 

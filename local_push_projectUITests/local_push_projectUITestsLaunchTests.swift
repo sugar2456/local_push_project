@@ -1,10 +1,3 @@
-//
-//  local_push_projectUITestsLaunchTests.swift
-//  local_push_projectUITests
-//
-//  Created by 小川悟 on 2025/08/01.
-//
-
 import XCTest
 
 final class local_push_projectUITestsLaunchTests: XCTestCase {
