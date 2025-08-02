@@ -1,15 +1,41 @@
 import SwiftUI
 
-struct ContentView: View {
+struct NotificationSampleView: View {
+    // 外部から渡すプロパティ
+    let title: String
+    let buttonTitle: String
+    let action: () -> Void
+    
     var body: some View {
-        VStack(spacing: 40) {
-            Text("ローカル通知サンプル")
+        VStack(spacing: 16) {
+            Text(title)
                 .font(.title)
-            Button("通知をスケジュール") {
-                scheduleNotification()
+            Button(buttonTitle) {
+                action()
             }
             .padding()
             .background(RoundedRectangle(cornerRadius: 10).stroke())
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        VStack(spacing: 40) {
+            NotificationSampleView(
+                title: "ローカル通知　最小設定",
+                buttonTitle: "5秒後に通知"
+            ) {
+                scheduleNotification()
+            }
+            
+            // 2つ目のビュー
+            NotificationSampleView(
+                title: "ローカル通知　",
+                buttonTitle: "通知をスケジュール 2"
+            ) {
+                scheduleNotification()
+            }
         }
         .padding()
     }
