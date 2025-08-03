@@ -36,6 +36,13 @@ struct ContentView: View {
             ) {
                 scheduleDateNotification()
             }
+            
+            NotificationSampleView(
+                title: "通知　取得",
+                buttonTitle: "通知取得"
+            ) {
+                scheduleImageAttachmentNotification()
+            }
         }
         .padding()
     }
@@ -85,5 +92,34 @@ struct ContentView: View {
                 print("通知をスケジュールしました")
             }
         }
+    }
+    
+    func scheduleImageAttachmentNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "画像付き通知"
+        content.body  = "バンドル内の画像を添付しています"
+
+        if let imageURL = Bundle.main.url(forResource: "notification", withExtension: "png") {
+            do {
+                let attachment = try UNNotificationAttachment(
+                    identifier: "myImageAttachment",
+                    url: imageURL,
+                    options: nil
+                )
+                content.attachments = [attachment]
+            } catch {
+                print("Attachment 作成失敗:", error)
+            }
+        } else {
+            print("fileが見つからない")
+        }
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger
+        )
+        UNUserNotificationCenter.current().add(request)
     }
 }
