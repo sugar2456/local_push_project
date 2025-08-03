@@ -51,6 +51,13 @@ struct ContentView: View {
             ) {
                 scheduleGitAttachmentNotification()
             }
+            
+            NotificationSampleView(
+                title: "ローカル通知　カスタムアクション通知",
+                buttonTitle: "カスタムアクション"
+            ) {
+                scheduleCustomActionNotification()
+            }
         }
         .padding()
     }
@@ -158,5 +165,30 @@ struct ContentView: View {
             trigger: trigger
         )
         UNUserNotificationCenter.current().add(request)
+    }
+    
+    func scheduleCustomActionNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "ローカル通知　選択肢"
+        content.body  = "5秒後に通知が届きます"
+        content.sound = .default
+        content.categoryIdentifier = "MEETING_INVITATION"
+        
+        // 5秒後に発火するトリガー
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        
+        // リクエスト作成
+        let request = UNNotificationRequest(identifier: "testNotification",
+                                            content: content,
+                                            trigger: trigger)
+        
+        // 通知を登録
+        UNUserNotificationCenter.current().add(request) { error in
+            if let e = error {
+                print("通知登録エラー:", e)
+            } else {
+                print("通知をスケジュールしました")
+            }
+        }
     }
 }

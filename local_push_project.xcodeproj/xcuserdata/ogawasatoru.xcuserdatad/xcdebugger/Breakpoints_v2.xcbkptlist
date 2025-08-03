@@ -14,40 +14,10 @@
             filePath = "local_push_project/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "scheduleImageAttachmentNotification()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5EDAEC13-3409-4559-9BE7-3CC7BAE19A62 - 203bcafdbd92e78d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "local_push_project.ContentView.scheduleImageAttachmentNotification() -&gt; ()"
-                  moduleName = "local_push_project.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ogawasatoru/Source/local_push_project/local_push_project/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102">
-               </Location>
-               <Location
-                  uuid = "5EDAEC13-3409-4559-9BE7-3CC7BAE19A62 - 203bcafdbd92e78d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "local_push_project.ContentView.scheduleImageAttachmentNotification() -&gt; ()"
-                  moduleName = "local_push_project.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ogawasatoru/Source/local_push_project/local_push_project/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -60,8 +30,8 @@
             filePath = "local_push_project/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "scheduleImageAttachmentNotification()"
             landmarkType = "7">
          </BreakpointContent>
@@ -76,8 +46,8 @@
             filePath = "local_push_project/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "scheduleImageAttachmentNotification()"
             landmarkType = "7">
          </BreakpointContent>
@@ -92,8 +62,8 @@
             filePath = "local_push_project/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "scheduleImageAttachmentNotification()"
             landmarkType = "7">
          </BreakpointContent>
