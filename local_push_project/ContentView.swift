@@ -38,10 +38,18 @@ struct ContentView: View {
             }
             
             NotificationSampleView(
-                title: "通知　取得",
-                buttonTitle: "通知取得"
+                title: "ローカル通知　画像添付",
+                buttonTitle: "画像の添付通知"
             ) {
                 scheduleImageAttachmentNotification()
+            }
+            
+            
+            NotificationSampleView(
+                title: "ローカル通知　Gif添付",
+                buttonTitle: "Gifの添付通知"
+            ) {
+                scheduleGitAttachmentNotification()
             }
         }
         .padding()
@@ -103,6 +111,35 @@ struct ContentView: View {
             do {
                 let attachment = try UNNotificationAttachment(
                     identifier: "myImageAttachment",
+                    url: imageURL,
+                    options: nil
+                )
+                content.attachments = [attachment]
+            } catch {
+                print("Attachment 作成失敗:", error)
+            }
+        } else {
+            print("fileが見つからない")
+        }
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger
+        )
+        UNUserNotificationCenter.current().add(request)
+    }
+    
+    func scheduleGitAttachmentNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "gif付き通知"
+        content.body  = "バンドル内のgifを添付しています"
+
+        if let imageURL = Bundle.main.url(forResource: "cat", withExtension: "gif") {
+            do {
+                let attachment = try UNNotificationAttachment(
+                    identifier: "myGifAttachment",
                     url: imageURL,
                     options: nil
                 )
